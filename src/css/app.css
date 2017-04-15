@@ -1,0 +1,167 @@
+
+/*--------------------------------header CSS--------------------------------*/
+
+#header {
+    padding: 50px 0;
+    text-align: center;
+    max-width: 768px;
+    margin: 0 auto;
+}
+#header .logo {
+    display: inline-block;
+}
+#header .logo img {
+    display: block;
+    width: 176px;
+    height: 60px;
+    margin: 0 auto 10px;
+}
+#header .logo span {
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 5px;
+}
+.offer h1 {
+    font-weight: 700;
+    font-size: 60px;
+    line-height: 67px;
+    margin-bottom: 15px;
+}
+.offer p {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 43px;
+}
+.offer a,
+.offer span {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 10px;
+}
+.offer a {
+    color: rgba(255,255,255,0.7);
+    text-transform: uppercase;
+    font-size: 15px;
+    font-weight: 500;
+}
+.offer span {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: rgba(255,255,255,0.7);
+
+}
+
+/*--------------------------------main CSS--------------------------------*/
+
+main {
+    position: relative;
+    padding: 30px 0 150px 100px;
+}
+main:before {
+    content: "";
+    position: absolute;
+    top: 150px;
+    left: 0;
+    right: 0;
+    bottom: 75px;
+    background-color: #fedd23;
+}
+.main-content {
+    background-color: #fff;
+    position: relative;
+    z-index: 1;
+    -webkit-box-shadow: 0 25px 110px 0 rgba(0, 0, 0, 0.11);
+    -moz-box-shadow: 0 25px 110px 0 rgba(0, 0, 0, 0.11);
+    box-shadow: 0 25px 110px 0 rgba(0, 0, 0, 0.11);
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding:50px 65px ;
+}
+
+
+/*--------------------------------item CSS--------------------------------*/
+
+.item {
+    display: flex;
+    position: relative;
+    align-items: center;
+    padding: 25px 0;
+    border-bottom: 1px solid #ececec;
+}
+.item-box__container {
+    position: relative;
+}
+.btn-remove {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.item__data {
+    width: 65%;
+    display: flex;
+}
+.item__data__image {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    -webkit-box-shadow: 0 5px 12px 0 rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0 5px 12px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 0 5px 12px 0 rgba(0, 0, 0, 0.2);
+    margin-right: 40px;
+}
+.item__data__image img {
+    display: block;
+    width: 85px;
+    height: auto;
+}
+.item__data__head h3 {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 52px;
+}
+.item__data__head p {
+    color: #7d7d7d;
+}
+.item__price {
+    width: 35%;
+}
+
+
+
+
+.total-sum {
+    text-align: right;
+    font-size: 24px;
+    font-weight: 700;
+    padding: 30px;
+}
+
+
+/*--------------------------------footer CSS--------------------------------*/
+
+#footer {
+    background-color: #182026;
+    position: relative;
+    padding: 20px 0;
+    color: #f5f8fa;
+}
+#footer:before {
+    content: "";
+    position: absolute;
+    height: 1px;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-image: -webkit-linear-gradient(left, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.3) 50%, rgba(255, 255, 255, 0) 100%);
+    background-image: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.3) 50%, rgba(255, 255, 255, 0) 100%);
+}
+.copyright {
+    display: flex;
+    justify-content: space-between;
+}
+.copyright a {
+    color: #48aff0;
+}
