@@ -21085,7 +21085,7 @@ var Item = function (_Component) {
         value: function skuChange(event) {
 
             var defaultTotal = this.props.data_items[event].price * this.props.data_items[event].min;
-            //this.props.cnt(event)
+            this.props.cnt(defaultTotal);
 
             this.setState({
                 img: this.props.data_items[event].image,
@@ -21210,12 +21210,24 @@ var ItemWrap = function (_Component) {
 
         var _this = _possibleConstructorReturn(this, (ItemWrap.__proto__ || Object.getPrototypeOf(ItemWrap)).call(this));
 
-        _this.state = { showItem: true };
+        _this.state = {
+            showItem: true
+        };
         _this.removeItem = _this.removeItem.bind(_this);
+        _this.totalFuns = _this.totalFuns.bind(_this);
         return _this;
     }
 
     _createClass(ItemWrap, [{
+        key: 'totalFuns',
+        value: function totalFuns(event) {
+            console.log(event);
+            console.log(this.props.data_index);
+            var e = event;
+            var i = this.props.data_index;
+            this.props.obj({ e: i });
+        }
+    }, {
         key: 'removeItem',
         value: function removeItem() {
             this.setState({ showItem: false });
@@ -21224,7 +21236,7 @@ var ItemWrap = function (_Component) {
         key: 'render',
         value: function render() {
 
-            var item = this.state.showItem ? _react2.default.createElement(_Item2.default, { data_items: this.props.data_items }) : '';
+            var item = this.state.showItem ? _react2.default.createElement(_Item2.default, { cnt: this.totalFuns, data_items: this.props.data_items }) : '';
             var button = this.state.showItem ? _react2.default.createElement(
                 'button',
                 { onClick: this.removeItem, className: 'btn-remove' },
@@ -21278,21 +21290,28 @@ var Main = function (_Component) {
         var _this = _possibleConstructorReturn(this, (Main.__proto__ || Object.getPrototypeOf(Main)).call(this, props));
 
         _this.state = {
-            total: 0
+            total: 0,
+            sss: 0
         };
-        //this.totalFuns = this.totalFuns.bind(this);
+        _this.totalObject = _this.totalObject.bind(_this);
 
         return _this;
     }
 
-    //totalFuns(event){
-    //    console.log(event)
-    //    this.setState({total: 3})
-    //    return this.state.total
-    //}
-
-
     _createClass(Main, [{
+        key: 'totalObject',
+        value: function totalObject(event) {
+            console.log(event);
+            this.setState({ sss: event });
+        }
+        //totalFuns(event){
+        //    console.log(event)
+        //    this.setState({total: 3})
+        //    return this.state.total
+        //}
+
+
+    }, {
         key: 'componentWillMount',
         value: function componentWillMount() {
 
@@ -21319,7 +21338,8 @@ var Main = function (_Component) {
                 return _react2.default.createElement(_ItemWrap2.default, {
                     key: i,
                     data_index: 'item' + item,
-                    data_items: data
+                    data_items: data,
+                    obj: this.totalObject
                     //cnt={this.totalFuns}
                 });
             });

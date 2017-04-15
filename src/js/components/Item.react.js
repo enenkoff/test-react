@@ -22,7 +22,7 @@ class Item extends Component {
     skuChange(event) {
 
         var defaultTotal = this.props.data_items[event].price * this.props.data_items[event].min
-        //this.props.cnt(event)
+        this.props.cnt(defaultTotal)
 
         this.setState(
             {

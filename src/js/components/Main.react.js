@@ -7,12 +7,17 @@ class Main extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            total: 0
+            total: 0,
+            sss: 0
         };
-        //this.totalFuns = this.totalFuns.bind(this);
+        this.totalObject = this.totalObject.bind(this);
 
     }
 
+    totalObject(event){
+        console.log(event)
+        this.setState({sss: event})
+    }
     //totalFuns(event){
     //    console.log(event)
     //    this.setState({total: 3})
@@ -47,6 +52,7 @@ class Main extends Component {
                     key={i}
                     data_index={'item' + item}
                     data_items={data}
+                    obj={this.totalObject}
                     //cnt={this.totalFuns}
                     />
             )
